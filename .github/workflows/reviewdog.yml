@@ -14,6 +14,7 @@ jobs:
           github_token: ${{ secrets.github_token }}
           reporter: github-pr-check
           textlint_flags: 'docs/**'
+      - name: github-pr-check failure
         if: failure()
         run: $(npm bin)/textlint -f checkstyle README.md docs/** | reviewdog -f=checkstyle -name="textlint" -reporter=github-pr-check
       - name: textlint-github-check
@@ -22,6 +23,7 @@ jobs:
           github_token: ${{ secrets.github_token }}
           reporter: github-check
           textlint_flags: 'docs/**'
+      - name: textlint-github-check failure
         if: failure()
         run: $(npm bin)/textlint -f checkstyle README.md docs/** | reviewdog -f=checkstyle -name="textlint" -reporter=github-check
       - name: textlint-github-pr-review
@@ -30,5 +32,6 @@ jobs:
           github_token: ${{ secrets.github_token }}
           reporter: github-pr-review
           textlint_flags: 'docs/**'
+      - name: textlint-github-pr-check failure
         if: failure()
         run: $(npm bin)/textlint -f checkstyle README.md docs/** | reviewdog -f=checkstyle -name="textlint" -reporter=github-pr-review
