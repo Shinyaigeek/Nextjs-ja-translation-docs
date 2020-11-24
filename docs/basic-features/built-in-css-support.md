@@ -200,7 +200,7 @@ export default HelloWorld;
 
 より多くの具体例については、 [styled-jsx documentation](https://github.com/vercel/styled-jsx) をご覧ください。
 
-## 関連事項
+## 関連
 
 次にやるべきこととして、以下のセクションを読むことを推奨します:
 
